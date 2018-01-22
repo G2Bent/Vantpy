@@ -1,8 +1,10 @@
-import os,unittest,time
-from Vantpy.report.Runner.HTMLTestRunner3 import HTMLTestRunner
+import os
 import sys
-from Vantpy import logreport
-log = logreport.Log()
+import time
+import unittest
+
+from Vantpy.report.Runner.HTMLTestRunner3 import HTMLTestRunner
+
 def create_suite():
 
     TestSuite = unittest.TestSuite()#测试集
@@ -40,7 +42,5 @@ Runner = HTMLTestRunner(
 
 if __name__ == '__main__':
     TestSuite = create_suite()
-    log.info("-------测试用例开始---------")
     Runner.run(TestSuite)
-    log.info("-------测试用例结束----------")
     fp.close()
