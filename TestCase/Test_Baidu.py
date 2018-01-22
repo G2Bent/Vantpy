@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from Vantpy.Pages.BaiduPage import BaiduPage
-from Vantpy.BaseSe.Selenium2 import Pyse
-from Vantpy.Data.baidu_data import *
+from Pages.BaiduPage import BaiduPage
+from BaseSe.Selenium2 import Pyse
+from Data.baidu_data import *
 class BaiduCase(unittest.TestCase):
     def setUp(self):
         self.driver = Pyse.browser()

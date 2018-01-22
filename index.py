@@ -3,7 +3,7 @@ import sys
 import time
 import unittest
 
-from Vantpy.report.Runner.HTMLTestRunner3 import HTMLTestRunner
+from report.Runner.HTMLTestRunner3 import HTMLTestRunner
 
 def create_suite():
 

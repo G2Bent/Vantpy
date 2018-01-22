@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from selenium.webdriver.common.by import By
-from Vantpy.BaseSe.Selenium2 import Pyse
+from BaseSe.Selenium2 import Pyse
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import *
 
