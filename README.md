@@ -2,7 +2,7 @@
 
 ---
 #### 关于框架：
-Vantpy框架基于Selenium2+unittest搭建的WebUI自动化测试框架
+Vantpy框架基于Selenium3+unittest搭建的WebUI自动化测试框架
 
 #### 特点：
 - 使用POM（页面对象模式）设计，使我们写的代码更加简单，后期更加容易维护以及复用性更高
