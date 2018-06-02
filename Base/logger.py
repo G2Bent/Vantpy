@@ -23,7 +23,7 @@ class Logger(object):
         log_path = os.path.dirname(os.path.abspath('.'))+'/logs/'
         log_name = log_path+now+'.log'
 
-        filehandle = logging.FileHandler(log_name)
+        filehandle = logging.FileHandler(log_name,encoding="utf-8")
         filehandle.setLevel(logging.INFO)
 
         #创建一个handle，用来输入日志到控制台
