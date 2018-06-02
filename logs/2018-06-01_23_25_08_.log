@@ -1,0 +1,6 @@
+2018-06-01 23:25:08,066  - INFO - You had select Chrome browser.
+2018-06-01 23:25:08,066  - INFO - The test url is: https://www.baidu.com
+2018-06-01 23:25:13,172  - INFO - Starting Chrome browser.
+2018-06-01 23:25:13,809  - INFO - Open url: https://www.baidu.com
+2018-06-01 23:25:15,014  - INFO - Maximize the current window.
+2018-06-01 23:25:15,017  - INFO - Set implicitly wait 10 seconds.
