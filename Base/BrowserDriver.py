@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+# @Author  : Vant
+# @Email   : 944921374@qq.com
+
 import os.path
 from selenium import webdriver
 from Base.logger import Logger
-import time
+import yaml
 
 logger = Logger(logger="BrowserDriver").getlog()
 
@@ -16,17 +19,18 @@ class BrowserDriver(object):
         self.driver = driver
 
     def openbrowser(self,driver):
-        # #读取配置文件
-        # config = ConfigParser()
-        # file_path = os.path.dirname(os.path.abspath('.'))+'\conf\config.ini'
-        # config.read(file_path)
+        #读取配置文件
+        file_path = os.path.dirname(os.getcwd())
+        name_path = file_path + '\conf\config.yaml'
+        with open(name_path, 'r') as f:
+            temp = yaml.load(f.read())
 
-        #获取配置文件属性
-        # browser = config.get("brwserType","browserName")
-        browser = "Chrome"
+        # 获取配置文件属性
+        brow = temp['brwserType']['browserName']
+        browser = brow
         logger.info("You had select %s browser." % browser)
-        # url = config.get("testUrl","URL")
-        url = "https://www.baidu.com"
+        ur = temp['testUrl']['URL']
+        url = ur
         logger.info("The test url is: %s" % url)
 
         if browser == "Firefox":
@@ -43,9 +47,8 @@ class BrowserDriver(object):
         logger.info("Open url: %s" % url)
         driver.maximize_window()
         logger.info("Maximize the current window.")
-        driver.implicitly_wait(10)
-        logger.info("Set implicitly wait 10 seconds.")
-        time.sleep(5)
+        driver.implicitly_wait(5)
+        logger.info("Set implicitly wait 5 seconds.")
         return driver
 
     def quit_browser(self):
