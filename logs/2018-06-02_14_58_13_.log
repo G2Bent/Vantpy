@@ -1,0 +1,11 @@
+2018-06-02 14:58:13,521  - INFO - You had select Chrome browser.
+2018-06-02 14:58:13,524  - INFO - The test url is: https://www.baidu.com
+2018-06-02 14:58:19,629  - INFO - Starting Chrome browser.
+2018-06-02 14:58:20,456  - INFO - Open url: https://www.baidu.com
+2018-06-02 14:58:21,607  - INFO - Maximize the current window.
+2018-06-02 14:58:21,609  - INFO - Set implicitly wait 5 seconds.
+2018-06-02 14:58:21,609  - INFO - Clear input-box: //*[@id="kw"]...
+2018-06-02 14:58:22,723  - INFO - Input element by xpath: //*[@id="kw"]...
+2018-06-02 14:58:22,723  - INFO - Input: selenium
+2018-06-02 14:58:25,575  - INFO - Click element by xpath: //*[@id="su"]...
+2018-06-02 14:58:28,182  - INFO - Had take screenshot and save to folder : /screenshots

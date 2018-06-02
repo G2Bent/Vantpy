@@ -1,0 +1,8 @@
+brwserType:
+  #browserName : Firefox
+  browserName : Chrome
+  #browserName : IE
+
+testUrl:
+  URL : https://www.baidu.com
+
