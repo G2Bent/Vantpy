@@ -75,15 +75,17 @@ file_path = os.path.dirname(os.getcwd())
 #### 日志输出
 
 ```
-2018-06-02 14:58:13,521  - INFO - You had select Chrome browser.
-2018-06-02 14:58:13,524  - INFO - The test url is: https://www.baidu.com
-2018-06-02 14:58:19,629  - INFO - Starting Chrome browser.
-2018-06-02 14:58:20,456  - INFO - Open url: https://www.baidu.com
-2018-06-02 14:58:21,607  - INFO - Maximize the current window.
-2018-06-02 14:58:21,609  - INFO - Set implicitly wait 5 seconds.
-2018-06-02 14:58:21,609  - INFO - Clear input-box: //*[@id="kw"]...
-2018-06-02 14:58:22,723  - INFO - Input element by xpath: //*[@id="kw"]...
-2018-06-02 14:58:22,723  - INFO - Input: selenium
+2018-06-02 19:05:27,581  - INFO - 选择的浏览器为: Chrome 浏览器
+2018-06-02 19:05:27,581  - INFO - 打开的URL为: https://www.baidu.com
+2018-06-02 19:05:33,511  - INFO - 启动谷歌浏览器
+2018-06-02 19:05:34,190  - INFO - 打开URL: https://www.baidu.com
+2018-06-02 19:05:35,331  - INFO - 全屏当前窗口
+2018-06-02 19:05:35,360  - INFO - 设置5秒隐式等待时间
+2018-06-02 19:05:35,360  - INFO - 清空文本框内容: //*[@id="kw"]...
+2018-06-02 19:05:36,524  - INFO - 输入内容方式 by xpath: //*[@id="kw"]...
+2018-06-02 19:05:36,524  - INFO - 输入内容: selenium
+2018-06-02 19:05:38,780  - INFO - 点击元素 by xpath: //*[@id="su"]...
+2018-06-02 19:05:41,358  - INFO - 页面已截图，截图的路径在项目: /screenshots路径下
 ```
 
 #### 生成测试报告
