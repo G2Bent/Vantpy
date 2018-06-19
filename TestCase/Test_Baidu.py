@@ -33,6 +33,7 @@ class BaiduCase(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
+
     def tearDown(self):
         pass
 

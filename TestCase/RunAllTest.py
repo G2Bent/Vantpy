@@ -10,7 +10,6 @@ import unittest
 
 from report.Runner.HTMLTestRunner3 import HTMLTestRunner
 
-
 def create_suite():
     TestSuite = unittest.TestSuite()  # 测试集
     test_dir = os.path.dirname(os.getcwd()) + '\\TestCase\\'
@@ -37,15 +36,13 @@ def report():
         report_name = os.path.dirname(os.getcwd()) + '\\report\\result.html'
     return report_name
 
-
-fp = open(report(), 'wb')
-Runner = HTMLTestRunner(
-    stream=fp,
-    title='测试报告',
-    description='测试用例执行情况'
-)
-
 if __name__ == '__main__':
     TestSuite = create_suite()
+    fp = open(report(), 'wb')
+    Runner = HTMLTestRunner(
+        stream=fp,
+        title='测试报告',
+        description='测试用例执行情况'
+    )
     Runner.run(TestSuite)
     fp.close()

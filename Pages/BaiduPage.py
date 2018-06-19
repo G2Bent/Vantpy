@@ -18,3 +18,4 @@ class BaiduPage(BasePage):
 
     def click_baidu_btn(self):
         self.click(self.click_btn)
+

@@ -24,7 +24,6 @@ class BrowserDriver(object):
         name_path = file_path + '\yaml\\browser.yaml'
         with open(name_path, 'r') as f:
             temp = yaml.load(f.read())
-
         # 获取配置文件属性
         brow = temp['brwserType']['browserName']
         browser = brow
@@ -32,7 +31,6 @@ class BrowserDriver(object):
         ur = temp['testUrl']['URL']
         url = ur
         logger.info("打开的URL为: %s" % url)
-
         if browser == "Firefox":
             driver = webdriver.Firefox()
             logger.info("启动火狐浏览器")

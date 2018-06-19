@@ -25,7 +25,7 @@ class BasePage(object):
         self.driver = driver
 
     def get_page_title(self):
-        logger.info("Current page title is %s" % self.driver.title)
+        logger.info("当前页面的title为: %s" % self.driver.title)
         return self.driver.title
 
 
@@ -35,11 +35,11 @@ class BasePage(object):
             WebDriverWait(self.driver, 30).until(lambda driver: driver.find_element(*loc).is_displayed())
             return self.driver.find_element(*loc)
         except NoSuchElementException:
-            logger.warning('Can not find element: %s' % loc[1])
+            logger.warning('找不到定位元素: %s' % loc[1])
             #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
         except TimeoutException:
-            logger.warning('Can not find element: %s' % loc[1])
+            logger.warning('查找元素超时: %s' % loc[1])
             #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
 
@@ -50,18 +50,32 @@ class BasePage(object):
         screen_name = file_path+now+'.png'
         try:
             self.driver.get_screenshot_as_file(screen_name)
-            logger.info("Had take screenshot and save to folder : /screenshots")
+            logger.info("页面已截图，截图的路径在项目: /screenshots路径下")
         except NameError as ne:
-            logger.error("Failed to take screenshot! %s" % ne)
+            logger.error("失败截图 %s" % ne)
+            self.get_screent_img()
+
+    def send_key(self, loc, text):
+        logger.info('清空文本框内容: %s...' % loc[1])
+        self.find_element(*loc).clear()
+        time.sleep(1)
+        logger.info('输入内容方式 by %s: %s...' % (loc[0], loc[1]))
+        logger.info('输入内容: %s' % text)
+            #self.log.myloggger('Input: %s' % text, flag=0)
+        try:
+            self.find_element(*loc).send_keys(text)
+            time.sleep(2)
+        except Exception as e:
+            logger.error("输入内容失败 %s" % e)
             self.get_screent_img()
 
     def click(self, loc):
-        logger.info('Click element by %s: %s...' % (loc[0], loc[1]))
+        logger.info('点击元素 by %s: %s...' % (loc[0], loc[1]))
         try:
             self.find_element(*loc).click()
             time.sleep(2)
         except AttributeError as e:
-            logger.error("Failed to click the element with %s" % e)
+            logger.error("无法点击元素: %s" % e)
             raise
 
     def clear(self,loc):
@@ -69,24 +83,9 @@ class BasePage(object):
         element = self.find_element(*loc)
         try:
             element.clear()
-            logger.info('Clear text in input box before typing')
+            logger.info('清空文本框内容')
         except NameError as ne:
-            logger.error("Failed to clear in input box with %s" % ne)
-            self.get_screent_img()
-
-
-    def send_key(self, loc, text):
-        logger.info('Clear input-box: %s...' % loc[1])
-        self.find_element(*loc).clear()
-        time.sleep(1)
-        logger.info('Input element by %s: %s...' % (loc[0], loc[1]))
-        logger.info('Input: %s' % text)
-            #self.log.myloggger('Input: %s' % text, flag=0)
-        try:
-            self.find_element(*loc).send_keys(text)
-            time.sleep(2)
-        except Exception as e:
-            logger.error("Failed to type in input box with %s" % e)
+            logger.error("清空文本框内容失败: %s" % ne)
             self.get_screent_img()
 
     def move_to_element(self, loc):
@@ -104,18 +103,18 @@ class BasePage(object):
         浏览器返回窗口
         """
         self.driver.back()
-        logger.info('Click back on current page')
+        logger.info('返回上一个页面')
 
     def forward(self):
         """
         浏览器前进下一个窗口
         """
         self.driver.forward()
-        logger.info('Click forward on current page')
+        logger.info('前进到下一个页面')
 
     def wait(self,seconds):
         self.driver.implicitly_wait(seconds)
-        logger.info("wait for %d seconds." % seconds)
+        logger.info("等待 %d 秒" % seconds)
 
     def close(self):
         """
@@ -123,9 +122,9 @@ class BasePage(object):
         """
         try:
             self.driver.close()
-            logger.info('Closing and quit the browser')
+            logger.info('关闭浏览器窗口')
         except NameError as ne:
-            logger.error("Failed to quit the browser with %s" % ne)
+            logger.error("关闭浏览器窗口失败 %s" % ne)
 
     def quit(self):
         """
