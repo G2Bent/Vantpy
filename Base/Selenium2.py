@@ -251,3 +251,10 @@ class BasePage(object):
         '''判断元素有没被定位到（并不意味着可见），定位到返回element,没定位到返回False'''
         result = WebDriverWait(self.driver, timeout, 1).until(EC.presence_of_element_located(loc))
         return result
+
+    def click_alert(self):
+        '''操作点击弹窗'''
+        alert = self.driver.switch_to.alert
+        time.sleep(2)
+        alert.accept()
+        time.sleep(2)
