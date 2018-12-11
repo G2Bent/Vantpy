@@ -36,6 +36,8 @@ def report():
         report_name = os.path.dirname(os.getcwd()) + '\\report\\result.html'
     return report_name
 
+
+
 if __name__ == '__main__':
     TestSuite = create_suite()
     fp = open(report(), 'wb')
