@@ -8,7 +8,7 @@ import sys
 import time
 import unittest
 
-from report.Runner.HTMLTestRunner3 import HTMLTestRunner
+from HtmlRunner import HTMLTestRunner
 
 def create_suite():
     TestSuite = unittest.TestSuite()  # 测试集
