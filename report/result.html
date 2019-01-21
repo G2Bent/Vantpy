@@ -123,9 +123,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> QAHE</p>
-<p class='attribute'><strong>开始时间 : </strong> 2018-12-17 18:16:40</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 1，错误 1，通过率= 0.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-12-24 18:14:16</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:01:14.232759</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，通过 1，通过率= 100.00%</p>
 
 <p class='description'>测试用例执行情况</p>
 </div>
@@ -133,9 +133,9 @@ function html_escape(s) {
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
 <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
 <a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -156,53 +156,27 @@ function html_escape(s) {
     <td>详细</td>
 </tr>
 
-<tr class='errorClass warning'>
-    <td>unittest.loader._FailedTest</td>
+<tr class='passClass warning'>
+    <td>test_login.TestLogin</td>
+    <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
     <td class="text-center">0</td>
-    <td class="text-center">1</td>
     <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
 </tr>
 
-<tr id='ft1_1' class='none'>
-    <td class='errorCase'><div class='testcase'>Test_Baidu</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-    <div id='div_ft1_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-    <div id='div_ft1_1' class="collapse in">
-    <pre>
-    
-1_1: ImportError: Failed to import test module: Test_Baidu
-Traceback (most recent call last):
-  File "E:\Python3.6\lib\unittest\loader.py", line 428, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "E:\Python3.6\lib\unittest\loader.py", line 369, in _get_module_from_name
-    __import__(name)
-  File "E:\1test\Vantpy\TestCase\Test_Baidu.py", line 9, in &lt;module&gt;
-    from Pages.BaiduPage import BaiduPage
-ModuleNotFoundError: No module named 'Pages'
-
-
-<img hidden="hidden" src="" alt="picture_shot" height="200" width="400"></img>
-<a  hidden="hidden"  href="">picture_shot</a>
-
-    </pre>
-    </div>
-    </td>
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_success</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
 </tr>
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
-    <td>通过率：0.00%</td>
+    <td>0</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
 </tr>
 </table>
 

@@ -1,0 +1,9 @@
+PyMySQL==0.9.2
+PyYAML ==3.12
+pytest == 3.5.0
+pymongo == 3.6.1
+selenium == 3.11.0
+pytest-allure-adaptor == 1.7.10
+faker == 1.0.1
+xlrd == 1.1.0
+pytest-html == 1.19.0

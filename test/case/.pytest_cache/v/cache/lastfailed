@@ -1,0 +1,10 @@
+{
+  "test_Baidu.py": true,
+  "test_customtrade.py::Test_CustomTrade::test_02_edit_custom": true,
+  "test_customtrade.py::Test_CustomTrade::test_add_custom": true,
+  "test_customtrade.py::Test_CustomTrade::test_edit_custom": true,
+  "test_subcontractor.py": true,
+  "test_worker_register.py": true,
+  "test_worker_register.py::Test_worker_regist::test_green_card": true,
+  "test_worker_register.py::Test_worker_regist::test_white_card": true
+}
