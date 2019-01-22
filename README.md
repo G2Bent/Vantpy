@@ -8,6 +8,7 @@ Vantpy更新的内容：
 4. 集成Jenkins，测试报告采用Allure测试报告
 5. 添加随机生成器，使测试用例更灵活
 6. 对selenium二次开发添加新的操作
+7. 实现有界面与无界面之间的切换
 --------------------------------------- 
 
 
@@ -72,13 +73,6 @@ brwserType:
 
 testUrl:
   URL : https://www.baidu.com
-```
-
-```
-file_path = os.path.dirname(os.getcwd())
-        name_path = file_path + '\conf\config.yaml'
-        with open(name_path, 'r') as f:
-            temp = yaml.load(f.read())
 ```
 
 #### 日志输出

@@ -4,4 +4,4 @@ brwserType:
   #browserName : IE
 
 ptahUrl:
-#    URL : https://www.baidu.com
+  URL : https://www.baidu.com

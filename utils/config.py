@@ -19,11 +19,13 @@ ELEMENT_PATH = os.path.join(BASE_PATH,'test','page','elements.yaml')
 CASE_PATH = os.path.join(BASE_PATH,'test','case','case.yaml')
 INTERFACE_PATH = os.path.join(BASE_PATH,'test','JieKou','interface.yaml')
 EXE_PATH = os.path.join(BASE_PATH,'test','Autolt','test1.jpg')
+EXCEL_PATH = os.path.join(BASE_PATH,'test','sqlconf','')
 
 
 class Config:
     def __init__(self, config=CONFIG_FILE,element = ELEMENT_PATH,case_data = CASE_PATH,
-                 interface_data = INTERFACE_PATH,chrome = DRIVER_PATH,screenshot = SCREENSHOTS_PATH):
+                 interface_data = INTERFACE_PATH,chrome = DRIVER_PATH,screenshot = SCREENSHOTS_PATH,
+                 excel = EXCEL_PATH):
         self.config = YamlReader(config).data
         self.elements = YamlReader(element).data
         self.case_data = YamlReader(case_data).data
@@ -31,6 +33,7 @@ class Config:
         self.exe_ptah = EXE_PATH
         self.driver_pt = chrome
         self.screen_shot = screenshot
+        self.excel_pt = excel
 
 
     def get(self, element, index=0):
@@ -58,9 +61,14 @@ class Config:
     def screen_shot_path(self):
         return self.screen_shot
 
+    def get_excel(self,file_name):
+        file_pt = self.excel_pt+"%s.xlsx"%file_name
+        return file_pt
+
 if __name__ == '__main__':
     c = Config()
     print(c.get("ptahUrl").get('URL'))
     print(c.get_ele('URL').get('url'))
     print(c.exe_data())
     # print(c.screen_shot_path())
+    print(c.get_excel("user"))
