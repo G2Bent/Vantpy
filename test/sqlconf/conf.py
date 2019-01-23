@@ -132,6 +132,19 @@ class MysqlLib(object):
             self.MySQL_db.rollback()
         self.MySQL_db.close()
 
+    def alter_sql(self,which,value):
+        cursor = self.MySQL_db.cursor()
+        sqladd = """alter table %s add %s varchar(20) not null"""%(which,value)#添加列
+        sqlchange = """alter table %s change %s VARCHAR(30) not NULL """%(which,value)#更改列
+        sqldrop = """alter table %s drop %s"""%(which,value)#删除表
+        sqlre = """alter table %s rename %s"""(which,value)#重命名表
+        try:
+            cursor.execute(sqladd)
+            self.MySQL_db.commit()
+        except:
+            print("add alter fail ")
+            self.MySQL_db.rollback()
+        self.MySQL_db.close()
 
 if __name__ == '__main__':
 
@@ -143,4 +156,5 @@ if __name__ == '__main__':
     # print(test.query_all_sql('student'))
     # print(test.query_ont_sql("student",'02'))
     # print(test.update_sql('student','hel8o','03'))
-    print(test.del_sql('student','03'))
+    # print(test.del_sql('student','03'))
+    print(test.alter_sql('student','eng_name'))
