@@ -7,19 +7,23 @@ from utils.config import Config
 #打开数据库
 class MysqlLib(object):
     def __init__(self, ip, user, password, db_name, charset='utf8'):
-        self.ip = ip
-        self.user = user
-        self.password = password
-        self.db_name = db_name
-        self.char = charset
+        try:
+            self.ip = ip
+            self.user = user
+            self.password = password
+            self.db_name = db_name
+            self.char = charset
 
-        self.MySQL_db = pymysql.connect(
-            host=self.ip,
-            user=self.user,
-            password=self.password,
-            db=self.db_name,
-            charset=self.char,
-        )
+            self.MySQL_db = pymysql.connect(
+                host=self.ip,
+                user=self.user,
+                password=self.password,
+                db=self.db_name,
+                charset=self.char,
+            )
+            print('连接成功')
+        except:
+            print('Error:connect is error')
 
     def sql_exe(self, sql):
         cursor = self.MySQL_db.cursor()
@@ -87,6 +91,7 @@ class MysqlLib(object):
                 print('id:%s,username:%s,bithday:%s'%(id,username,birthday))
         except:
             print("Error: unable to fetch data")
+        self.MySQL_db.close()
 
     def query_ont_sql(self,name,id):
         cursor = self.MySQL_db.cursor()
@@ -101,8 +106,31 @@ class MysqlLib(object):
                 print('id:%s,username:%s,bithday:%s' % (id, username, birthday))
         except:
             print("Error: unable to fetch data")
-        return True
+        self.MySQL_db.close()
 
+    def update_sql(self,which,value,id):
+        cursor = self.MySQL_db.cursor()
+        sql = "UPDATE %s SET s_name ='%s' WHERE s_id=%s"%(which,value,id)
+        try:
+            cursor.execute(sql)
+            self.MySQL_db.commit()
+            print('Update success')
+        except:
+            print("Error:update data discover error")
+            self.MySQL_db.rollback()
+        self.MySQL_db.close()
+
+    def del_sql(self,which,id):
+        cursor = self.MySQL_db.cursor()
+        sql = 'DELETE FROM %s WHERE s_id = %s'%(which,id)
+        try:
+            cursor.execute(sql)
+            self.MySQL_db.commit()
+            print('delete %s is success'%id)
+        except:
+            print('Error:delete is fail,please check your sql format')
+            self.MySQL_db.rollback()
+        self.MySQL_db.close()
 
 
 if __name__ == '__main__':
@@ -113,4 +141,6 @@ if __name__ == '__main__':
     # print(test.into_sql())
     # print(test.create_table('ch'))
     # print(test.query_all_sql('student'))
-    print(test.query_ont_sql("student",'02'))
+    # print(test.query_ont_sql("student",'02'))
+    # print(test.update_sql('student','hel8o','03'))
+    print(test.del_sql('student','03'))
