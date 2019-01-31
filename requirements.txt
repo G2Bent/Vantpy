@@ -8,3 +8,4 @@ faker == 1.0.1
 xlrd == 1.1.0
 pytest-html == 1.19.0
 pandas == 0.23.4
+tomorrow == 0.2.4
