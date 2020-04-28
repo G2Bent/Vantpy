@@ -6,7 +6,7 @@ import time
 import unittest
 import sys
 sys.path.append('../')
-from HTMLTestRunner3 import HTMLTestRunner
+from utils.HTMLTestRunner3 import HTMLTestRunner
 
 def create_suite():
     TestSuite = unittest.TestSuite()  # 测试集

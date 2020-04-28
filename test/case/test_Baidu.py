@@ -19,8 +19,6 @@ class BaiduCase(model):
         baidu.input_baidu_text('selenium')
         baidu.click_baidu_btn()
         baidu.get_screent_img("baidu")
-        try:
-            self.assertIn('selenium',self.driver.title())
-            print('test pass')
-        except Exception as e:
-            print('test fail',format(e))
+        print(self.driver.title)
+        self.assertIn('selenium',self.driver.title)
+

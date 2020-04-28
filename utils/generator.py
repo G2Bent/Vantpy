@@ -297,7 +297,7 @@ def factory_choice_generator(values):
     return choice_generator
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # print(random_phone_number())
     # print(random_name())
     # print(random_address())
@@ -312,5 +312,6 @@ if __name__ == '__main__':
     # choice_gen = factory_choice_generator(choices)()
     # for i in range(5):
     #     print(next(choice_gen))
-    print(random_num(3))
-    print(random_words())
+    # print(random_num(3))
+    # print(random_words())
+    # print(random_city())

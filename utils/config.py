@@ -21,7 +21,6 @@ INTERFACE_PATH = os.path.join(BASE_PATH,'test','JieKou','interface.yaml')
 EXE_PATH = os.path.join(BASE_PATH,'test','Autolt','test1.jpg')
 EXCEL_PATH = os.path.join(BASE_PATH,'test','sqlconf','')
 
-
 class Config:
     def __init__(self, config=CONFIG_FILE,element = ELEMENT_PATH,case_data = CASE_PATH,
                  interface_data = INTERFACE_PATH,chrome = DRIVER_PATH,screenshot = SCREENSHOTS_PATH,
@@ -34,7 +33,6 @@ class Config:
         self.driver_pt = chrome
         self.screen_shot = screenshot
         self.excel_pt = excel
-
 
     def get(self, element, index=0):
         """

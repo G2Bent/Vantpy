@@ -2,11 +2,8 @@
 # -*- coding:utf-8 -*-
 import unittest
 from test.common.BrowserDriver import BrowserDriver
-from test.page.login_page import *
-from test.page.custom_page import *
 from utils.config import Config
 from time import sleep
-from test.page.SubContractorPage import sub_contractor_page
 class model(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

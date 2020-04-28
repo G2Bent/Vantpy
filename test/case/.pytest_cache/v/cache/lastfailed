@@ -1,5 +1,5 @@
 {
-  "test_Baidu.py": true,
+  "demo_Baidu.py": true,
   "test_customtrade.py::Test_CustomTrade::test_02_edit_custom": true,
   "test_customtrade.py::Test_CustomTrade::test_add_custom": true,
   "test_customtrade.py::Test_CustomTrade::test_edit_custom": true,

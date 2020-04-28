@@ -39,7 +39,7 @@ class BrowserDriver(object):
             chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
             chrome_options.add_argument('--disable-extensions')
             chrome_options.add_argument('lang=zh_CN.UTF-8')
-            driver = webdriver.Chrome(chrome_options=chrome_options)
+            driver = webdriver.Chrome(options=chrome_options)
 
             # driver = webdriver.Chrome(self.c.driver_ptah()) #用于Windows系统加载驱动使用
 
@@ -55,6 +55,7 @@ class BrowserDriver(object):
         logger.info("全屏当前窗口")
         driver.implicitly_wait(5)
         logger.info("设置5秒隐式等待时间")
+        print(driver.capabilities)
         return driver
 
     def quit_browser(self):
