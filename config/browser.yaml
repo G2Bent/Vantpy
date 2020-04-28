@@ -1,5 +1,5 @@
 brwserType:
-#  browserName : Firefox
+  browserName : Firefox
   browserName : Chrome
   #browserName : IE
 

@@ -3,7 +3,6 @@
 import unittest
 from test.common.BrowserDriver import BrowserDriver
 from utils.config import Config
-from time import sleep
 class model(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
