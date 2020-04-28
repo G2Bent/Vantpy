@@ -19,6 +19,4 @@ class BaiduCase(model):
         baidu.input_baidu_text('selenium')
         baidu.click_baidu_btn()
         baidu.get_screent_img("baidu")
-        print(self.driver.title)
         self.assertIn('selenium',self.driver.title)
-

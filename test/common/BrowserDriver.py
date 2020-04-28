@@ -55,7 +55,6 @@ class BrowserDriver(object):
         logger.info("全屏当前窗口")
         driver.implicitly_wait(5)
         logger.info("设置5秒隐式等待时间")
-        print(driver.capabilities)
         return driver
 
     def quit_browser(self):
