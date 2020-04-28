@@ -10,7 +10,7 @@ Vantpy更新的内容：
 6. 对selenium二次开发添加新的操作
 7. 实现有界面与无界面之间的切换
 
- ![](screenshots/vantpy2.0.jpg) 
+ ![](/screenshots/vantpy2.0.jpg) 
 --------------------------------------- 
 
 
