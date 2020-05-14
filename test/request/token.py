@@ -5,7 +5,7 @@ import json
 from utils.config import Config
 
 
-class get_token:
+class get_login_token:
     c = Config()
     username = c.get_case_data('login').get('username')
     password = c.get_case_data('login').get('password')
@@ -24,5 +24,5 @@ class get_token:
             return False
 
 if __name__ == '__main__':
-    c = get_token()
+    c = get_login_token()
     print(c.login_token())

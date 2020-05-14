@@ -8,14 +8,14 @@ from utils.config import Config
 class MysqlLib(object):
     def __init__(self, ip, user, password, db_name, charset='utf8'):
         try:
-            self.ip = ip
+            self.ip1 = ip
             self.user = user
             self.password = password
             self.db_name = db_name
             self.char = charset
 
             self.MySQL_db = pymysql.connect(
-                host=self.ip,
+                host=self.ip1,
                 user=self.user,
                 password=self.password,
                 db=self.db_name,
@@ -148,7 +148,7 @@ class MysqlLib(object):
 
 if __name__ == '__main__':
 
-    p = ['localhost','root','password','test']
+    p = ['127.0.0.1','root','','autotest']
     test = MysqlLib(p[0], p[1], p[2], p[3])
     print(test)
     # print(test.into_sql())
@@ -157,4 +157,4 @@ if __name__ == '__main__':
     # print(test.query_ont_sql("student",'02'))
     # print(test.update_sql('student','hel8o','03'))
     # print(test.del_sql('student','03'))
-    print(test.alter_sql('student','eng_name'))
+    # print(test.alter_sql('student','eng_name'))

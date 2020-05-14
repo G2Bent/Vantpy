@@ -3,13 +3,11 @@
 # @Author  : Vant
 # @Email   : 944921374@qq.com
 
-from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 from selenium.common.exceptions import * #导入所有的异常类
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import os.path
 from utils.logger import Logger
 import time
 from utils.config import *

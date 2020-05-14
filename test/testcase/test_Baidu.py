@@ -9,7 +9,7 @@ import unittest
 import sys
 sys.path.append('../')
 from test.page.BaiduPage import BaiduPage
-from test.case.case_modle import *
+from test.testcase.case_modle import *
 from test.common.BrowserDriver import BrowserDriver
 
 class BaiduCase(model):

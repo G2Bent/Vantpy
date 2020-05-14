@@ -3,10 +3,8 @@
 # @Author  : Vant
 # @Email   : 944921374@qq.com
 
-import os.path
 from selenium import webdriver
 from utils.logger import Logger
-import yaml
 from selenium.webdriver.chrome.options import Options
 from utils.config import Config
 
@@ -46,7 +44,7 @@ class BrowserDriver(object):
             # driver = webdriver.Chrome() #用于linux系统加载驱动使用
             logger.info("启动谷歌浏览器")
         elif browser == "IE":
-            driver = webdriver.Ie(self.ie_driver_path)
+            driver = webdriver.Ie(self.c.driver_ptah())
             logger.info("启动IE浏览器")
 
         driver.get(url)

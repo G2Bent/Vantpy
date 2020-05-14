@@ -4,7 +4,7 @@
 # @Email   : 944921374@qq.com
 
 from selenium.webdriver.common.by import By
-from test.common.Selenium2 import BasePage
+from test.common.Seleniums import BasePage
 import sys
 sys.path.append('../')
 class BaiduPage(BasePage):
