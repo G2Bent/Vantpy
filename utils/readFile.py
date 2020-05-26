@@ -81,7 +81,7 @@ class ExcelReader:
         return self._data
 
 
-if __name__ == '__main__':
-    y = 'browser.yaml'
-    reader = YamlReader(y)
-    print(reader.data)
+# if __name__ == '__main__':
+    # y = 'browser.yaml'
+    # reader = YamlReader(y)
+    # print(reader.data)
