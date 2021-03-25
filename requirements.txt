@@ -1,5 +1,5 @@
 PyMySQL==0.9.3
-PyYAML ==4.2b1
+PyYAML ==5.4
 pytest == 3.5.0
 pymongo == 3.6.1
 selenium == 3.11.0
