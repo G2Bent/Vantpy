@@ -26,7 +26,7 @@ Vantpy更新的内容：
 
 #### 关于框架：
 
-Vantpy框架基于Selenium+Yaml+Unittest搭建的WebUI自动化测试框架
+Vantpy框架基于python3+selenium+unittest搭建的WebUI自动化测试框架
 
 #### 特点：
 
@@ -35,7 +35,6 @@ Vantpy框架基于Selenium+Yaml+Unittest搭建的WebUI自动化测试框架
 - 框架集成了Selenium的常用定位方法，使元素定位更加方便
 - 使用HTMLTestRunner作为自动生成测试报告，报告更加美观，更加详细，内容更丰富
 - Logging日志输出，可以看到每一步做的操作
-- Yaml作为数据管理，实现代码，数据分离，使框架的使用起来更加简单
 
 #### 部署环境：
 
@@ -79,16 +78,6 @@ class BaiduPage(BasePage):
 
     def input_baidu_text(self,text):
         self.send_key(self.search_loc,text)
-```
-
-#### 读取yaml数据
-
-```
-brwserType:
-  browserName : Chrome
-
-testUrl:
-  URL : https://www.baidu.com
 ```
 
 #### 日志输出
