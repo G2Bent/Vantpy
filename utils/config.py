@@ -19,7 +19,7 @@ print(CONFIG_FILE)
 # REPORT_PATH = os.path.join(BASE_PATH, 'report')
 # SCREENSHOTS_PATH = os.path.join(BASE_PATH,"screenshots",'')
 # EXE_PATH = os.path.join(BASE_PATH,'test','Autolt','test1.jpg')
-# EXCEL_PATH = os.path.join(BASE_PATH,'test','configSQL','')
+# EXCEL_PATH = os.path.join(BASE_PATH,'test','sqlserver','')
 
 # ,element = ELEMENT_PATH,case_data = CASE_PATH,
 #                  interface_data = INTERFACE_PATH,chrome = DRIVER_PATH,screenshot = SCREENSHOTS_PATH,

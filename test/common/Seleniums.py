@@ -5,24 +5,25 @@
 
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
-from selenium.common.exceptions import * #导入所有的异常类
+from selenium.common.exceptions import *  # 导入所有的异常类
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from utils.logger import Logger
 import time
-from utils.config import *
+from data.config import Config
 
-#create a logger instance
+# create a logger instance
 logger = Logger(logger='BasePage').getlog()
+
 
 class BasePage(object):
 
-    def __init__(self,driver):
+    def __init__(self, driver):
         """
         :param driver:打开浏览器驱动
         """
         self.driver = driver
-        self.sc =Config()
+        self.conf = Config()
 
     def get_page_title(self):
         logger.info("当前页面的title为: %s" % self.driver.title)
@@ -35,11 +36,11 @@ class BasePage(object):
             return self.driver.find_element(*loc)
         except NoSuchElementException:
             logger.warning('找不到定位元素: %s' % loc[1])
-            #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
+            # self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
         except TimeoutException:
             logger.warning('查找元素超时: %s' % loc[1])
-            #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
+            # self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
 
     def find_elements(self, *loc):
@@ -49,22 +50,22 @@ class BasePage(object):
             return self.driver.find_elements(*loc)
         except NoSuchElementException:
             logger.warning('找不到定位元素: %s' % loc[1])
-            #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
+            # self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
         except TimeoutException:
             logger.warning('查找元素超时: %s' % loc[1])
-            #self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
+            # self.log.myloggger('Can not find element: %s' % loc[1], flag=2)
             raise
 
-    def get_screent_img(self,value):
+    def get_screent_img(self, value):
         '''将页面截图下来'''
         file_path = './report/screenshot/'
-        image_path = self.sc.screen_shot_path()
+        image_path = self.conf.path()
         now = time.strftime("%Y-%m-%d_%H_%M_%S_")
-        screen_name = image_path+value+'.png'
+        screen_name = image_path + value + '.png'
         try:
             self.driver.get_screenshot_as_file(screen_name)
-            logger.info("页面已截图，截图的路径在项目: %s "%image_path)
+            logger.info("页面已截图，截图的路径在项目: %s " % image_path)
         except NameError as ne:
             logger.error("失败截图 %s" % ne)
             self.get_screent_img(value)
@@ -75,7 +76,7 @@ class BasePage(object):
         time.sleep(1)
         logger.info('输入内容方式 by %s: %s...' % (loc[0], loc[1]))
         logger.info('输入内容: %s' % text)
-            #self.log.myloggger('Input: %s' % text, flag=0)
+        # self.log.myloggger('Input: %s' % text, flag=0)
         try:
             self.find_element(*loc).send_keys(text)
             time.sleep(2)
@@ -92,7 +93,7 @@ class BasePage(object):
             logger.error("无法点击元素: %s" % e)
             raise
 
-    def clear(self,loc):
+    def clear(self, loc):
         '''输入文本框清空操作'''
         element = self.find_element(*loc)
         try:
@@ -126,7 +127,7 @@ class BasePage(object):
         self.driver.forward()
         logger.info('前进到下一个页面')
 
-    def wait(self,seconds):
+    def wait(self, seconds):
         self.driver.implicitly_wait(seconds)
         logger.info("等待 %d 秒" % seconds)
 
@@ -194,17 +195,17 @@ class BasePage(object):
         element = self.find_element(*loc)
         Select(element).select_by_value(text)
 
-    def is_text_in_element(self,loc,text,timeout=10):
+    def is_text_in_element(self, loc, text, timeout=10):
         """判断文本在元素里，没定位到元素返回False，定位到元素返回判断结果布尔值"""
         try:
-            result = WebDriverWait(self.driver,timeout,1).until(EC.text_to_be_present_in_element(loc,text))
+            result = WebDriverWait(self.driver, timeout, 1).until(EC.text_to_be_present_in_element(loc, text))
         except TimeoutException:
-            print("元素没有定位到:"+str(loc))
+            print("元素没有定位到:" + str(loc))
             return False
         else:
             return result
 
-    def is_text_in_value(self,loc,value,timeout = 10):
+    def is_text_in_value(self, loc, value, timeout=10):
         '''
         判断元素的value值，没定位到元素返回false,定位到返回判断结果布尔值
         result = driver.text_in_element(element, text)

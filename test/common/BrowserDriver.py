@@ -6,7 +6,7 @@
 from selenium import webdriver
 from utils.logger import Logger
 from selenium.webdriver.chrome.options import Options
-from utils.config import Config
+from data.config import Config
 
 logger = Logger(logger="BrowserDriver").getlog()
 
@@ -20,14 +20,14 @@ class BrowserDriver(object):
         self.c = Config()
 
     def openbrowser(self,driver):
-        browser = self.c.get("brwserType").get("browserName")
+        browser = self.c.get("browserType","browserName")
         logger.info("选择的浏览器为: %s 浏览器" % browser)
-        url = self.c.get('ptahUrl').get('URL')
+        url = self.c.get('ptahUrl',"URL")
         logger.info("打开的URL为: %s" % url)
         if browser == "Firefox":
             driver = webdriver.Firefox()
             logger.info("启动火狐浏览器")
-        elif browser == "Chrome":
+        else:
             chrome_options = Options()
             chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
             chrome_options.add_argument('--start-maximized')  # 指定浏览器分辨率
@@ -43,9 +43,6 @@ class BrowserDriver(object):
 
             # driver = webdriver.Chrome() #用于linux系统加载驱动使用
             logger.info("启动谷歌浏览器")
-        elif browser == "IE":
-            driver = webdriver.Ie(self.c.driver_ptah())
-            logger.info("启动IE浏览器")
 
         driver.get(url)
         logger.info("打开URL: %s" % url)

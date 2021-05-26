@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from test.common.Seleniums import BasePage
 import sys
 sys.path.append('../')
+
 class BaiduPage(BasePage):
     """
     在这里写定位器，通过元素属性定位元素对象

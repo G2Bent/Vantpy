@@ -268,7 +268,6 @@ def random_email():
     """随机email"""
     return fake.email()
 
-
 def random_ipv4():
     """随机IPV4地址"""
     return fake.ipv4()
