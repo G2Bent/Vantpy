@@ -1,5 +1,12 @@
 ﻿## <center> **Vantpy2.0**</center>
 
+#### vantpy的目标
+- 实现web UI自动化测试
+- 嵌套locust集成性能测试
+- 实现request接口测试
+- 通过ssh访问数据库
+- fastapi编写接口api自定义测试
+
 #### 关于更新1.21
 
 Vantpy更新的内容：
