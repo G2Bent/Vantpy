@@ -149,8 +149,8 @@ class MysqlLib(object):
 if __name__ == '__main__':
 
     p = ['127.0.0.1','root','','autotest']
-    test = MysqlLib(p[0], p[1], p[2], p[3])
-    print(test)
+    # test = MysqlLib(p[0], p[1], p[2], p[3])
+    # print(test)
     # print(test.into_sql())
     # print(test.create_table('ch'))
     # print(test.query_all_sql('student'))
